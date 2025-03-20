@@ -14,5 +14,5 @@ enable_testing()
 add_executable(riba main.cpp tests.cpp)
 
 target_link_libraries(riba GTest::gtest_main)
-include(GoogleTest)
-gtest_discover_tests(riba)
+
+add_test(NAME riba COMMAND GitTests)
