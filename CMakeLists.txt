@@ -11,10 +11,31 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 enable_testing()
 
-add_executable(main main.cpp)
 
-add_executable(GitTests tests.cpp)
+add_executable(main main.cpp candle.cpp)
 
-target_link_libraries(GitTests GTest::gtest_main)
+add_executable(is_green is_green.cpp)
+target_link_libraries(is_green GTest::gtest_main)
 
-add_test(NAME mother_check COMMAND GitTests)
+add_executable(is_red is_red.cpp)
+target_link_libraries(is_red GTest::gtest_main)
+
+add_executable(body_size body_size.cpp)
+target_link_libraries(body_size GTest::gtest_main)
+
+add_executable(full_size full_size.cpp)
+target_link_libraries(full_size GTest::gtest_main)
+
+add_executable(contains contains.cpp)
+target_link_libraries(contains GTest::gtest_main)
+
+add_executable(body_contains body_contains.cpp)
+target_link_libraries(body_contains GTest::gtest_main)
+
+
+
+add_test(NAME green COMMAND is_green)
+add_test(NAME red COMMAND is_red)
+add_test(NAME contain COMMAND contains)
+add_test(NAME body COMMAND body_size)
+add_test(NAME full COMMAND full_size)
