@@ -6,3 +6,6 @@ TEST(HelloTest, BasicAssertions) {
     // Expect equality.
     EXPECT_EQ(7 * 6, 42);
   }
+TEST(GoodbyeTest, BasicAssertions){
+    EXPECT_EQ(7, 42);
+}
