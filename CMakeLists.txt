@@ -11,8 +11,10 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 enable_testing()
 
-add_executable(riba main.cpp tests.cpp)
+add_executable(main main.cpp)
 
-target_link_libraries(riba GTest::gtest_main)
+add_executable(GitTests tests.cpp)
 
-add_test(NAME riba COMMAND GitTests)
+target_link_libraries(GitTests GTest::gtest_main)
+
+add_test(NAME mother_check COMMAND GitTests)
