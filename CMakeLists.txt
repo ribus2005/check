@@ -14,22 +14,22 @@ enable_testing()
 
 add_executable(main main.cpp candle.cpp)
 
-add_executable(is_green is_green.cpp)
+add_executable(is_green is_green.cpp candle.cpp)
 target_link_libraries(is_green GTest::gtest_main)
 
-add_executable(is_red is_red.cpp)
+add_executable(is_red is_red.cpp candle.cpp)
 target_link_libraries(is_red GTest::gtest_main)
 
-add_executable(body_size body_size.cpp)
+add_executable(body_size body_size.cpp candle.cpp)
 target_link_libraries(body_size GTest::gtest_main)
 
-add_executable(full_size full_size.cpp)
+add_executable(full_size full_size.cpp candle.cpp)
 target_link_libraries(full_size GTest::gtest_main)
 
-add_executable(contains contains.cpp)
+add_executable(contains contains.cpp candle.cpp)
 target_link_libraries(contains GTest::gtest_main)
 
-add_executable(body_contains body_contains.cpp)
+add_executable(body_contains body_contains.cpp candle.cpp)
 target_link_libraries(body_contains GTest::gtest_main)
 
 
